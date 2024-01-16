@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "scoob-backend"
+version = "0.1.0"
+description = ""
+authors = ["Rebecca"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+neo4j = "^5.16.0"
+typing-extensions = "^4.9.0"
+flask = "^3.0.0"
+flask-cors = "^4.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
