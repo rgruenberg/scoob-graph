@@ -35,6 +35,36 @@ def get_totals():
     counts = {record['category']: record['count'] for record in records}
     return jsonify(counts)
 
+@app.route("/caught")
+def get_caught_totals():
+    query = """
+    MATCH (i:investigator)<-[:CAUGHT_BY]-(v:villain)
+    WITH i, COUNT(*) AS catchersCount
+    RETURN i.name, catchersCount
+    ORDER BY catchersCount DESC
+    LIMIT 5
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'name': record['i.name'], 'catchersCount': record['catchersCount']} for record in records]
+    return jsonify(counts)
+
+@app.route("/unmasked")
+def get_unmasked_totals():
+    query = """
+    MATCH (i:investigator)<-[:UNMASKED_BY]-(v:villain)
+    WITH i, COUNT(*) AS unmaskerCount
+    RETURN i.name, unmaskerCount
+    ORDER BY unmaskerCount DESC
+    LIMIT 5
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'name': record['i.name'], 'unmaskerCount': record['unmaskerCount']} for record in records]
+    return jsonify(counts)
+
 if __name__ == "__main__":
     logging.root.setLevel(logging.INFO)
     logging.info("Starting on port %d, database is at %s", port, url)
