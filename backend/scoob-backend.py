@@ -65,6 +65,88 @@ def get_unmasked_totals():
     counts = [{'name': record['i.name'], 'unmaskerCount': record['unmaskerCount']} for record in records]
     return jsonify(counts)
 
+@app.route("/catchphrase")
+def get_trope_totals():
+    query = """
+    MATCH (i:investigator)
+    WHERE ANY(phrase IN keys(i) 
+        WHERE phrase ENDS WITH '_count' 
+        AND i[phrase] IS NOT NULL)
+    WITH i, REDUCE(s = 0, phrase IN keys(i) | s + CASE 
+        WHEN phrase ENDS WITH '_count' 
+        THEN i[phrase] ELSE 0 END) AS totalCatchphrases
+    UNWIND keys(i) AS phrase
+    WITH i, phrase, totalCatchphrases, i[phrase] AS count
+    WHERE phrase ENDS WITH '_count' 
+        AND count IS NOT NULL
+    RETURN i.name AS investigatorName, phrase AS catchphrase, count AS catchphraseCount
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'name': record['investigatorName'], 'phrase': record['catchPhrase'], 'tropeCount': record['catchphraseCount']} for record in records]
+    return jsonify(counts)
+
+@app.route("/villainType")
+def get_villain_type_totals():
+    query = """
+    MATCH (v:villain)
+    RETURN v.type, COUNT(v) AS count
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'type': record['v.type'], 'typeCount': record['count']} for record in records]
+    return jsonify(counts)
+
+@app.route("/appearances")
+def get_appearances_totals():
+    query = """
+    MATCH (i:investigator)
+    WHERE ANY(appearances IN keys(i) 
+        WHERE appearances = 'appearances') 
+        AND ANY(phrase IN keys(i) 
+        WHERE phrase ENDS WITH '_count' 
+        AND i[phrase] IS NOT NULL)
+    WITH i, i.appearances AS appearances, 
+        REDUCE(s = 0, phrase IN keys(i) | s + CASE 
+        WHEN phrase ENDS 
+        WITH '_count' 
+        THEN i[phrase] ELSE 0 END) AS totalCatchphrases
+    RETURN i.name AS investigatorName, appearances AS investigatorAppearances, totalCatchphrases AS catchphraseCount
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'name': record['investigatorName'], 'investigatorAppearances': record['investigatorAppearances'], 'catchphraseCount': record['catchphraseCount']} for record in records]
+    return jsonify(counts)
+
+@app.route("/motives")
+def get_motive_totals():
+    query = """
+    MATCH (v:villain)
+    WHERE (v.motive IS NOT NULL)
+    RETURN v.motive, COUNT(v) AS count
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'motive': record['v.motive'], 'motiveCount': record['count']} for record in records]
+    return jsonify(counts)
+
+@app.route("/status")
+def get_status_totals():
+    query = """
+    MATCH (s:suspect)
+    WHERE (s.status IS NOT NULL)
+    RETURN s.status, COUNT(s) AS count
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'status': record['s.status'], 'statusCount': record['count']} for record in records]
+    return jsonify(counts)
+
 if __name__ == "__main__":
     logging.root.setLevel(logging.INFO)
     logging.info("Starting on port %d, database is at %s", port, url)

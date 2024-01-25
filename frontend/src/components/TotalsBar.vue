@@ -12,7 +12,7 @@ import axios from 'axios'
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
-  name: 'BarChart',
+  name: 'TotalsBar',
   components: { Bar },
   data: () => ({
     loaded: false,
@@ -25,8 +25,12 @@ export default {
       }]
     },
     chartOptions: {
-      responsive: true
-    }
+      responsive: true,
+      title: {
+        display: true,
+        text: 'Database Node Counts',
+      }
+    },
   }),
   async mounted () {
     this.loaded = false
