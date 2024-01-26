@@ -1,0 +1,34 @@
+//Rel Collaborators
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Velma Dinkley'}),
+	(i3:investigator {name: 'Daphne Blake'}),
+	(i4:investigator {name: 'Fred Jones'}),
+	(i5:investigator {name: 'Norville Rogers'}),
+	(c:collaborator {name: 'Sharon Wetherby'}),
+	(v:villain {alias: 'Ghost of Elias Kingston'})
+CREATE 	(c)-[:VICTIM_OF]->(v),
+	(c)-[:FRIEND_OF]->(i),
+	(c)-[:FRIEND_OF]->(i2),
+	(c)-[:FRIEND_OF]->(i3),
+	(c)-[:FRIEND_OF]->(i4),
+	(c)-[:FRIEND_OF]->(i5);
+
+MATCH 	(c:collaborator {name: 'Sharon Wetherby'}),
+	(c2:collaborator {name: 'Mr. Wetherby'})
+CREATE 	(c2)-[:FATHER_OF]->(c);
+
+MATCH 	(c:collaborator {name: 'John Maxwell'}),
+	(i:investigator {name: 'Daphne Blake'})
+CREATE 	(c)-[:UNCLE_OF]->(i);
+
+MATCH 	(c:collaborator {name: 'Colonel Beauregard Sanders'}),
+	(i:investigator {name: 'Scoobert Doobert Doo'})
+CREATE 	(c)-[:BEQUOTHER_TO]->(i);
+
+MATCH 	(c:collaborator {name: 'Skip Jones'}),
+	(i:investigator {name: 'Fred Jones'})
+CREATE 	(c)-[:FATHER_OF]->(i);
+
+MATCH 	(c:collaborator {name: 'Peggy Jones'}),
+	(i:investigator {name: 'Fred Jones'})
+CREATE 	(c)-[:MOTHER_OF]->(i);

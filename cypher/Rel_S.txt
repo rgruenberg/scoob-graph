@@ -1,0 +1,342 @@
+//Rel Suspects
+MATCH 	(s:suspect {name: 'Jameson Hyde White'}),
+	(v: villain {alias: 'Black Knight'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:VICTIM_OF]->(v);
+
+MATCH 	(s:suspect {name: 'Mr. Wickles'}),
+	(v: villain {alias: 'Black Knight'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Ebenezer Shark'}),
+	(v: villain {alias: 'Ghost of Captain Cutler'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Captain Cutler'}),
+	(v: villain {alias: 'Ghost of Captain Cutler'})
+CREATE 	(s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Mrs. Cutler'}),
+	(s2:suspect {name: 'Captain Cutler'}),
+	(v: villain {alias: 'Ghost of Captain Cutler'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:IN_LEAGUE_WITH]->(v),
+	(s)-[:WIFE_OF]->(s2);
+
+MATCH 	(s:suspect {name: 'Bluestone the Great'}),
+	(v: villain {alias: 'Phantom'})
+CREATE 	(s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Big Ben'}),
+	(v: villain {alias: 'Miner Forty-Niner'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Hank'}),
+	(v: villain {alias: 'Miner Forty-Niner'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Clark Sparkman'}),
+	(i:investigator {name: 'Velma Dinkley'}),
+	(v: villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:LIKES]->(i);
+
+MATCH 	(s:suspect {name: 'Zip Elvin'}),
+	(i:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:HATES]->(i);
+
+MATCH 	(s:suspect {name: 'Colt Steelcase'}),
+	(i:investigator {name: 'Fred Jones'}),
+	(v:villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:HATES]->(i);
+
+MATCH 	(s:suspect {name: 'Uvinious Botango'}),
+	(i:investigator {name: 'Fred Jones'}),
+	(v:villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:HATES]->(i);
+
+MATCH 	(s:suspect {name: 'Shannon Lucas'}),
+	(v:villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Ridley'}),
+	(s2:suspect {name: 'Hudson Baron'}),
+	(v:villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:LIKES]->(s2);
+
+MATCH 	(s:suspect {name: 'Hudson Baron'}),
+	(s2:suspect {name: 'Ridley'}),
+	(s3:suspect {name: 'Sly Baron'}),
+	(v:villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:BROTHER_OF]->(s3),
+	(s)-[:LIKES]->(s2);
+
+MATCH 	(s:suspect {name: 'Sly Baron'}),
+	(s2:suspect {name: 'Hudson Baron'}),
+	(v:villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:BROTHER_OF]->(s2);
+
+MATCH 	(s:suspect {name: 'Host Android Model'}),
+	(v: villain {alias: 'Alien'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Buck Masters'}),
+	(v: villain {alias: 'Indian Witch Doctor'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Mike'}),
+	(v: villain {alias: 'Indian Witch Doctor'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:IN_LEAGUE_WITH]->(v);
+
+MATCH 	(s:suspect {name: 'Stuart Wetherby'}),
+	(v: villain {alias: 'Ghost of Elias Kingston'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Candy Mint'}),
+	(v: villain {alias: 'Ape Man'})
+CREATE 	(s)-[:VICTIM_OF]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Carl'}),
+	(v: villain {alias: 'Ape Man'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Sarah Jenkins'}),
+	(s2:suspect {name: 'Mr. Jenkins'}),
+	(v: villain {alias: 'Charlie'})
+CREATE 	(s)-[:IN_LEAGUE_WITH]->(v),
+	(s)-[:SISTER_OF]->(s2),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Mr. Jenkins'}),
+	(s2:suspect {name: 'Sarah Jenkins'}),
+	(v: villain {alias: 'Charlie'})
+CREATE 	(s)-[:BROTHER_OF]->(s2),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Pietro'}),
+	(v: villain {alias: 'Puppet Master'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Samson'}),
+	(v: villain {alias: 'Ghost Clown'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Max'}),
+	(v: villain {alias: 'Ghost Clown'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Mr. Barnstorm'}),
+	(v: villain {alias: 'Ghost Clown'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Harry'}),
+	(v: villain {alias: 'Ghost Clown'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Big Bob Oakley'}),
+	(v: villain {alias: 'Dracula'}),
+	(v2: villain {alias: 'Gypsy'}),
+	(v3: villain {alias: 'Frankensteins Monster'}),
+	(v4: villain {alias: 'Wolfman'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:IS]->(v2),
+	(s)-[:SUSPECT_FOR]->(v2),
+	(s)-[:IS]->(v3),
+	(s)-[:SUSPECT_FOR]->(v3),
+	(s)-[:IS]->(v4),
+	(s)-[:SUSPECT_FOR]->(v4);
+
+MATCH 	(s:suspect {name: 'Dr. Najib'}),
+	(v: villain {alias: 'Mummy of Ankha'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Professor'}),
+	(v: villain {alias: 'Mummy of Ankha'})
+CREATE 	(s)-[:VICTIM_OF]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Zeke'}),
+	(v: villain {alias: 'Zombie'}),
+	(v2: villain {alias: 'Witch'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v),
+	(s)-[:SUSPECT_FOR]->(v2);
+
+MATCH 	(s:suspect {name: 'Zeb Perkins'}),
+	(v: villain {alias: 'Zombie'}),
+	(v2: villain {alias: 'Witch'})
+CREATE 	(s)-[:IS]->(v2),
+	(s)-[:SUSPECT_FOR]->(v2),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'C.L. Magnus'}),
+	(v: villain {alias: 'Ghost of Redbeard'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Butler'}),
+	(v: villain {alias: 'Ghost of Redbeard'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Farmer'}),
+	(v: villain {alias: 'Spooky Space Kook'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Henry Bascomb'}),
+	(v: villain {alias: 'Spooky Space Kook'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Cosgood Creeps'}),
+	(v: villain {alias: 'Phantom Shadows'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Cuthbert Crawls'}),
+	(v: villain {alias: 'Phantom Shadows'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Cousin Maldahyde'}),
+	(v: villain {alias: 'Phantom Shadows'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Cousin Slicker'}),
+	(v: villain {alias: 'Phantom Shadows'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Cousin Simple'}),
+	(v: villain {alias: 'Phantom Shadows'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Nephew Norble'}),
+	(v: villain {alias: 'Phantom Shadows'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Mr. Greenway'}),
+	(v: villain {alias: 'Snow Ghost'})
+CREATE 	(s)-[:IS]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Mr. Leech'}),
+	(v: villain {alias: 'Snow Ghost'})
+CREATE 	(s)-[:IN_LEAGUE_WITH]->(v),
+	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Fu Lan Chi'}),
+	(v: villain {alias: 'Snow Ghost'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Helga'}),
+	(v: villain {alias: 'Ghost of Mr. Hyde'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Dr. Jekyll'}),
+	(v: villain {alias: 'Ghost of Mr. Hyde'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'A. Fong'}),
+	(v: villain {alias: 'Ghost of Zen Tuo'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Professor Wayne'}),
+	(v: villain {alias: 'Caveman'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Professor Ingstrom'}),
+	(v: villain {alias: 'Caveman'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Mr. Carswell'}),
+	(v: villain {alias: 'Creeper'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Hermit of the Hills'}),
+	(v: villain {alias: 'Creeper'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Asa Shanks'}),
+	(v: villain {alias: 'Headless Specter'}),
+    (v2:villain {alias: 'Phony Phantom'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:SUSPECT_FOR]->(v2),
+        (s)-[:IS]->(v2);
+
+MATCH 	(s:suspect {name: 'Jefferson Stillwall'}),
+	(v: villain {alias: 'Headless Specter'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Penrod Stillwall'}),
+        (s2:suspect {name: 'Jefferson Stillwall'}),
+	(v: villain {alias: 'Headless Specter'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v),
+        (s)-[:DESCENDANT_OF]->(s2);
+
+MATCH 	(s:suspect {name: 'John Simms'}),
+	(v: villain {alias: 'Witch Doctor'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Sheep Rustler'}),
+	(v: villain {alias: 'Werewolf'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Johnny Sands'}),
+	(v: villain {alias: 'Wax Phantom'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Mr. Grisby'}),
+	(v: villain {alias: 'Wax Phantom'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Roger Stevens'}),
+	(v: villain {alias: 'Wax Phantom'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Captain Crothers'}),
+	(v: villain {alias: 'Captain Skunkbeard'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Sunny St. Cloud'}),
+	(v: villain {alias: 'Woodenleg Wally'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);
+
+MATCH 	(s:suspect {name: 'Biff Wellington'}),
+	(v: villain {alias: 'Captain Skunkbeard'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Mr. Mysterio'}),
+	(v: villain {alias: 'Woodenleg Wally'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v),
+        (s)-[:IS]->(v);
+
+MATCH 	(s:suspect {name: 'Rupert Garcia'}),
+	(v: villain {alias: 'Captain Skunkbeard'})
+CREATE 	(s)-[:SUSPECT_FOR]->(v);

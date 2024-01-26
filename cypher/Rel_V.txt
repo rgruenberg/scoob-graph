@@ -1,0 +1,186 @@
+//Rel Villains
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(v: villain {alias: 'Black Knight'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Ghost of Captain Cutler'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Phantom'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Miner Forty-Niner'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Fred Jones'}),
+	(i2:investigator {name: 'Velma Dinkley'}),
+	(v: villain {alias: 'Alien'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(v: villain {alias: 'Indian Witch Doctor'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i);
+
+MATCH 	(i:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Ghost of Elias Kingston'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i);
+
+MATCH 	(i:investigator {name: 'Norville Rogers'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Ape Man'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+
+MATCH 	(s:suspect {name: 'Mr. Jenkins'}),
+	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(v: villain {alias: 'Charlie'})
+CREATE 	(v)-[:CAUGHT_BY]->(s),
+	(v)-[:UNMASKED_BY]->(i);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Norville Rogers'}),
+	(v: villain {alias: 'Puppet Master'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Norville Rogers'}),
+	(s:suspect {name: 'Mr. Barnstorm'}),
+	(v: villain {alias: 'Ghost Clown'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(s);
+
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Dracula'}),
+	(v2: villain {alias: 'Gypsy'}),
+	(v3: villain {alias: 'Frankensteins Monster'}),
+	(v4: villain {alias: 'Wolfman'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2),
+	(v2)-[:CAUGHT_BY]->(i),
+	(v2)-[:UNMASKED_BY]->(i2),
+	(v3)-[:CAUGHT_BY]->(i),
+	(v3)-[:UNMASKED_BY]->(i2),
+	(v4)-[:CAUGHT_BY]->(i),
+	(v4)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Mummy of Ankha'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Daphne Blake'}),
+	(i2:investigator {name: 'Velma Dinkley'}),
+	(v: villain {alias: 'Zombie'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Velma Dinkley'}),
+	(i2:investigator {name: 'Velma Dinkley'}),
+	(v: villain {alias: 'Witch'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+ 
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Velma Dinkley'}),
+	(v: villain {alias: 'Ghost of Redbeard'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Fred Jones'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Spooky Space Kook'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Norville Rogers'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Phantom Shadows'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Scoobert Doobert Doo'}),
+	(v: villain {alias: 'Snow Ghost'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Fred Jones'}),
+	(i2:investigator {name: 'Daphne Blake'}),
+	(v: villain {alias: 'Ghost of Mr. Hyde'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Velma Dinkley'}),
+	(v: villain {alias: 'Ghost of Zen Tuo'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Norville Rogers'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Caveman'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Scoobert Doobert Doo'}),
+	(v: villain {alias: 'Creeper'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Norville Rogers'}),
+	(i2:investigator {name: 'Norville Rogers'}),
+	(v: villain {alias: 'Headless Specter'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Fred Jones'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Phony Phantom'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Scoobert Doobert Doo'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Witch Doctor'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);
+
+MATCH 	(i:investigator {name: 'Norville Rogers'}),
+	(i2:investigator {name: 'Velma Dinkley'}),
+	(v: villain {alias: 'Werewolf'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2); 
+
+MATCH 	(i:investigator {name: 'Fred Jones'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Wax Phantom'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2);  
+
+MATCH 	(i:investigator {name: 'Norville Rogers'}),
+	(i2:investigator {name: 'Fred Jones'}),
+	(v: villain {alias: 'Captain Skunkbeard'})
+CREATE 	(v)-[:CAUGHT_BY]->(i),
+	(v)-[:UNMASKED_BY]->(i2); 
+
+MATCH 	(i:investigator {name: 'Norville Rogers'}),
+	(v: villain {alias: 'Woodenleg Wally'})
+CREATE 	(v)-[:CAUGHT_BY]->(i); 

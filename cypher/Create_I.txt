@@ -1,0 +1,62 @@
+//Create Investigators
+CREATE (node:investigator 
+{ 	
+	name: 'Scoobert Doobert Doo',
+	nicknames: ['Scooby Doo', 'Scoob'],
+	corporation: 'Mystery Incorporated',
+	species: 'dog',
+	appearances: 27,
+	weaknesses: ['scooby snacks', 'cowardice'],
+	strengths: ['surfing'],
+	ruh_roh_count: 17,
+	rikes_count: 6
+}); 
+
+CREATE (node:investigator 
+{ 	
+	name: 'Norville Rogers',
+	nicknames: ['Shaggy', 'Shag'],
+	corporation: 'Mystery Incorporated',
+	species: 'human',
+	appearances: 27,
+	weaknesses: ['scooby snacks', 'cowardice'],
+	strengths: ['gymnastics', 'ventriloquism', 'video games'],
+	zoinks_count: 71
+});
+
+CREATE (node:investigator 
+{ 	
+	name: 'Fred Jones',
+	nicknames: ['freddy'],
+	corporation: 'Mystery Incorporated',
+	species: 'human',
+	appearances: 27,
+	weaknesses: [],
+	strengths: ['traps', 'driving'],
+	split_up_count: 11
+});
+
+CREATE (node:investigator 
+{ 	
+	name: 'Daphne Blake',
+	nicknames: ['Daph', 'Danger-Prone Daphne'],
+	corporation: 'Mystery Incorporated',
+	species: 'human',
+	appearances: 27,
+	weaknesses: ['clumsiness', 'driving'],
+	strengths: [],
+	jeepers_count: 2
+});
+
+CREATE (node:investigator 
+{ 	
+	name: 'Velma Dinkley',
+	nicknames: [],
+	corporation: 'Mystery Incorporated',
+	species: 'human',
+	appearances: 27,
+	weaknesses: ['sight', 'jealousy'],
+	strengths: ['intelligence'],
+	glasses_lost_count: 4,
+	jinkies_count: 2
+});  

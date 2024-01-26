@@ -1,0 +1,602 @@
+//Create Suspects
+CREATE (node:suspect
+{ 	
+	name: 'Jameson Hyde White',
+	nickname: '',
+	profession: ['professor', 'archaeologist'],
+	appearances: 1,
+	status: 'alive'
+});
+CREATE (node:suspect
+{ 	
+	name: 'Mr. Wickles',
+	nickname: '',
+	profession: ['museum curator'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Ebenezer Shark',
+	nickname: '',
+	profession: ['beach hermit'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Captain Cutler',
+	nickname: '',
+	profession: ['sailor'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mrs. Cutler',
+	nickname: 'Widow Cutler',
+	profession: ['lighthouse keeper, witch'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Bluestone the Great',
+	nickname: '',
+	profession: ['magician'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Big Ben',
+	nickname: '',
+	profession: ['guest ranch operator'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Hank',
+	nickname: '',
+	profession: ['ranch caretaker'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Clark Sparkman',
+	nickname: '',
+	profession: ['reporter'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Zip Elvin',
+	nickname: '',
+	profession: ['astronaut'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Colt Steelcase',
+	nickname: '',
+	profession: ['astronaut'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Uvinious Botango',
+	nickname: 'U-Boat',
+	profession: ['football player'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Shannon Lucas',
+	nickname: '',
+	profession: ['astronaut'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Ridley',
+	nickname: '',
+	profession: ['alien hunter'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Hudson Baron',
+	nickname: '',
+	profession: ['spaceman', 'inventor'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Sly Baron',
+	nickname: '',
+	profession: ['billionaire', 'daredevil'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Host Android Model',
+	nickname: 'H.A.M.',
+	profession: ['actor'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Buck Masters',
+	nickname: '',
+	profession: ['dog owner'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mike',
+	nickname: '',
+	profession: ['criminal'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Stuart Wetherby',
+	nickname: 'Uncle Stuart',
+	profession: [],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Candy Mint',
+	nickname: '',
+	profession: ['actress'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Carl',
+	nickname: '',
+	profession: ['stunt man'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Sarah Jenkins',
+	nickname: '',
+	profession: ['stunt man'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mr. Jenkins',
+	nickname: '',
+	profession: ['theme park operator'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Pietro',
+	nickname: '',
+	profession: ['puppeteer'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Samson',
+	nickname: 'Samson the Strongman',
+	profession: ['carnie'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Max',
+	nickname: 'Max the Midget',
+	profession: ['carnie'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mr. Barnstorm',
+	nickname: '',
+	profession: ['circus operator'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Harry',
+	nickname: 'Harry the Hypnotist',
+	profession: ['carnie'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Big Bob Oakley',
+	nickname: 'The Actor',
+	profession: ['criminal', 'master of disguise'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Dr. Najib',
+	nickname: '',
+	profession: ['egyptian researcher'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Professor',
+	nickname: '',
+	profession: ['archaeology professor'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Zeke',
+	nickname: '',
+	profession: ['store clerk'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Zeb Perkins',
+	nickname: '',
+	profession: ['store clerk'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'C.L. Magnus',
+	nickname: 'Mr. Magnus',
+	profession: ['freight owner'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Butler',
+	nickname: '',
+	profession: ['butler'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Farmer',
+	nickname: '',
+	profession: ['farmer'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Henry Bascomb',
+	nickname: '',
+	profession: ['neighbor'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Cosgood Creeps',
+	nickname: '',
+	profession: ['laywer'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Cuthbert Crawls',
+	nickname: '',
+	profession: ['laywer'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Cousin Maldahyde',
+	nickname: 'Sweet Cousin Maldahyde',
+	profession: [],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Cousin Slicker',
+	nickname: '',
+	profession: [],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Cousin Simple',
+	nickname: '',
+	profession: [],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Nephew Norble',
+	nickname: '',
+	profession: [],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mr. Greenway',
+	nickname: '',
+	profession: ['lodge owner'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mr. Leech',
+	nickname: '',
+	profession: ['smuggler'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Fu Lan Chi',
+	nickname: '',
+	profession: ['hermit'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Helga',
+	nickname: 'Helga the Great',
+	profession: ['ex-circus performer', 'housemaid'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Dr. Jekyll',
+	nickname: '',
+	profession: ['scientist'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'A. Fong',
+	nickname: 'Mr. Fong',
+	profession: ['art dealer'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Professor Wayne',
+	nickname: '',
+	profession: ['scientist'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Professor Ingstrom',
+	nickname: '',
+	profession: ['scientist'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mr. Carswell',
+	nickname: '',
+	profession: ['bank president'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Hermit of the Hills',
+	nickname: '',
+	profession: ['hermit'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Asa Shanks',
+	nickname: '',
+	profession: ['farmer'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Jefferson Stillwall',
+	nickname: '',
+	profession: [],
+	appearances: 1,
+	status: 'deceased'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Penrod Stillwall',
+	nickname: '',
+	profession: [],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'John Simms',
+	nickname: '',
+	profession: ['reporter'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Sheep Rustler',
+	nickname: '',
+	profession: ['smuggler'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Johnny Sands',
+	nickname: '',
+	profession: ['TV host'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Roger Stevens',
+	nickname: 'Mr. Stevens',
+	profession: ['TV station manager'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mr. Grisby',
+	nickname: '',
+	profession: ['wax sculptor'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Captain Crothers',
+	nickname: '',
+	profession: ['ship captain'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Sunny St. Cloud',
+	nickname: '',
+	profession: ['cruise director'],
+	appearances: 1,
+	status: 'alive'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Biff Wellington',
+	nickname: '',
+	profession: ['billionaire'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Mr. Mysterio',
+	nickname: '',
+	profession: ['hypnotist'],
+	appearances: 1,
+	status: 'incarcerated'
+});
+
+CREATE (node:suspect
+{ 	
+	name: 'Rupert Garcia',
+	nickname: '',
+	profession: ['astrocartographer'],
+	appearances: 1,
+	status: 'alive'
+});

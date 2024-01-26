@@ -1,0 +1,48 @@
+//Create Collaborators
+CREATE (node:collaborator 
+{ 	
+	name: 'Sharon Wetherby',
+	appearances: 1,
+	profession: [],
+	status: 'alive'
+}); 
+
+CREATE (node:collaborator 
+{ 	
+	name: 'Mr. Wetherby',
+	appearances: 1,
+	profession: [],
+	status: 'alive'
+}); 
+
+CREATE (node:collaborator 
+{ 	
+	name: 'John Maxwell',
+	appearances: 1,
+	profession: ['director'],
+	status: 'alive'
+}); 
+
+CREATE (node:collaborator 
+{ 	
+	name: 'Colonel Beauregard Sanders',
+	appearances: 1,
+	profession: [],
+	status: 'deceased'
+}); 
+
+CREATE (node:collaborator 
+{ 	
+	name: 'Skip Jones',
+	appearances: 1,
+	profession: [],
+	status: 'alive'
+}); 
+
+CREATE (node:collaborator 
+{ 	
+	name: 'Peggy Jones',
+	appearances: 1,
+	profession: [],
+	status: 'alive'
+}); 

@@ -1,0 +1,319 @@
+//Create Villains
+CREATE (node:villain
+{ 	
+	alias: 'Black Knight',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'County Museum',
+	motive: 'money',
+	appearances: 1
+});
+CREATE (node:villain
+{ 	
+	alias: 'Ghost of Captain Cutler',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Rock Point Beach',
+	motive: 'money',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Phantom',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Haunted Isle',
+	motive: 'money',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Miner Forty-Niner',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Gold City',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Alien',
+	type: 'alien',
+	realness: 'fake',
+	location: 'Space',
+	motive: 'pride',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Indian Witch Doctor',
+	type: 'human',
+	realness: 'fake',
+	location: 'Beach Boulevard',
+	motive: 'competition',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Ghost of Elias Kingston',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Weatherby Estate',
+	motive: 'money',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Ape Man',
+	type: 'monster',
+	realness: 'fake',
+	location: 'Forbidden Mountain',
+	motive: 'revenge',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Charlie',
+	type: 'robot',
+	realness: 'real',
+	location: 'Funland',
+	motive: 'paranoia',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Puppet Master',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Strand Theater',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Ghost Clown',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Circus',
+	motive: 'revenge',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Dracula',
+	type: 'monster',
+	realness: 'fake',
+	location: 'Franken Castle',
+	motive: 'money',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Gypsy',
+	type: 'human',
+	realness: 'fake',
+	location: 'Franken Castle',
+	motive: 'money',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Frankensteins Monster',
+	type: 'monster',
+	realness: 'fake',
+	location: 'Franken Castle',
+	motive: 'money',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Wolfman',
+	type: 'monster',
+	realness: 'fake',
+	location: 'Franken Castle',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Mummy of Ankha',
+	type: 'monster',
+	realness: 'fake',
+	location: 'Department of Archaeology',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Zombie',
+	type: 'monster',
+	realness: 'fake',
+	location: 'Swamps End',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Witch',
+	type: 'witch',
+	realness: 'fake',
+	location: 'Swamps End',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Ghost of Redbeard',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Skull Island',
+	motive: 'money',
+	appearances: 1
+});
+
+CREATE (node:villain
+{ 	
+	alias: 'Spooky Space Kook',
+	type: 'alien/ghost',
+	realness: 'fake',
+	location: 'Airfield',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Phantom Shadows',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Sanders Mansion',
+	motive: 'money',
+	appearances: 1
+}); 
+CREATE (node:villain
+{ 	
+	alias: 'Snow Ghost',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Wolfs End Lodge',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Ghost of Mr. Hyde',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Dr. Jekylls Mansion',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Ghost of Zen Tuo',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'San Francisco',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Caveman',
+	type: 'human',
+	realness: 'fake',
+	location: 'Oceanland',
+	motive: 'pride',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Creeper',
+	type: 'monster',
+	realness: 'fake',
+	location: 'Mr. Carswells Mansion',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Headless Specter',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Stillwall Mansion',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Phony Phantom',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Stillwall Mansion',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Witch Doctor',
+	type: 'human',
+	realness: 'fake',
+	location: 'Hawaii',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Werewolf',
+	type: 'monster',
+	realness: 'fake',
+	location: 'Abandoned Mill',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Wax Phantom',
+	type: 'human',
+	realness: 'fake',
+	location: 'KLMN Radio Station',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Captain Skunkbeard',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Bermuda Triangle',
+	motive: 'money',
+	appearances: 1
+}); 
+
+CREATE (node:villain
+{ 	
+	alias: 'Woodenleg Wally',
+	type: 'ghost',
+	realness: 'fake',
+	location: 'Bermuda Triangle',
+	motive: 'money',
+	appearances: 1
+}); 
