@@ -1,67 +1,56 @@
 <template>
   <div class="container">
-    <Bar v-if="loaded" :data="chartData" :options="chartOptions" />
+    <Pie v-if="loaded" :data="chartData" :options="chartOptions" />
   </div>
 </template>
 
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { Pie } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, CategoryScale, LinearScale, PieController } from 'chart.js'
 import axios from 'axios'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  PieController
+)
 
 export default {
-  name: 'UnmaskedBar',
-  components: { Bar },
+  name: 'MotivePie',
+  components: { Pie },
   data: () => ({
     loaded: false,
+    type: 'pie',
     chartData: {
       labels: [],
       datasets: [{
         label: 'Counts',
-        backgroundColor: [], // Example colors
+        backgroundColor: ['#f26722','#d28d30', '#b9d61c', '#fff56c', '#01a59c', '#faa954', '#702f90', '#f8dd2f'],
+        borderColor: ['#f26722','#d28d30', '#b9d61c', '#fff56c', '#01a59c', '#faa954', '#702f90', '#f8dd2f'],
+        borderWidth: 1,
         data: []
       }]
     },
     chartOptions: {
-     responsive: true,
-     title: {
-        display: true,
-        text: 'Who Unmasked the Most Villains?',
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'What Disguises Did the Villains Use?',
+        }
       }
     }
   }),
-  async mounted () {
+  async mounted() {
     this.loaded = false
     try {
-      const response = await axios.get('http://localhost:8080/unmasked')
+      const response = await axios.get('http://localhost:8080/villainType')
       const responseData = response.data
-      this.chartData.datasets[0].data = responseData.map(entry => entry.unmaskerCount);
-      this.chartData.labels = responseData.map(entry => entry.name);
-
-      let names = responseData.map(entry => entry.name);
-      let barColor = [];
-      names.forEach(name => {
-        switch (name) {
-        case 'Velma Dinkley':
-          barColor.push('#F98B08');
-          break;
-        case 'Fred Jones':
-          barColor.push('#0081DF');
-          break;
-        case 'Daphne Blake':
-          barColor.push('#6F1BA1');
-          break;
-        case 'Norville Rogers':
-          barColor.push('#D1FF49');
-          break;
-        default:
-          barColor.push('#B57530');
-          break;
-        }
-      });
-      this.chartData.datasets[0].backgroundColor = barColor;
+      this.chartData.datasets[0].data = responseData.map(entry => entry.typeCount);
+      this.chartData.labels = responseData.map(entry => entry.type);
 
       this.loaded = true
     } catch (e) {

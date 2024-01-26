@@ -26,9 +26,11 @@ export default {
     },
     chartOptions: {
      responsive: true,
-     title: {
-        display: true,
-        text: 'Who Unmasked the Most Villains?',
+     plugins: {
+        title: {
+          display: true,
+          text: 'Who Unmasked the Most Villains?',
+        }
       }
     }
   }),

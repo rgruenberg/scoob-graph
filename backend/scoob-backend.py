@@ -28,11 +28,13 @@ def get_totals():
     MATCH (v:villain) RETURN 'villains' AS category, COUNT(v) AS count
     UNION ALL
     MATCH (s:suspect) RETURN 'suspects' AS category, COUNT(s) AS count
+    UNION ALL
+    MATCH (c:collaborator) RETURN 'collaborator' AS category, COUNT(c) AS count
     """
 
     records, _, _ = driver.execute_query(query, database_=database, routing_="r")
     
-    counts = {record['category']: record['count'] for record in records}
+    counts = [{'count': record['count'], 'category': record['category']} for record in records]
     return jsonify(counts)
 
 @app.route("/caught")
@@ -84,7 +86,22 @@ def get_trope_totals():
 
     records, _, _ = driver.execute_query(query, database_=database, routing_="r")
     
-    counts = [{'name': record['investigatorName'], 'phrase': record['catchPhrase'], 'tropeCount': record['catchphraseCount']} for record in records]
+    counts = [{'name': record['investigatorName'], 'phrase': record['catchphrase'], 'tropeCount': record['catchphraseCount']} for record in records]
+    return jsonify(counts)
+
+@app.route("/tropeCaught")
+def get_scatter_totals():
+    query = """
+    MATCH (i:investigator)<-[CAUGHT_BY]-()
+    WITH i, COUNT(CAUGHT_BY) AS caughtCount
+    WHERE ANY(phrase IN keys(i) WHERE phrase ENDS WITH '_count' AND i[phrase] IS NOT NULL)
+    WITH i, caughtCount, REDUCE(s = 0, phrase IN keys(i) | s + CASE WHEN phrase ENDS WITH '_count' THEN i[phrase] ELSE 0 END) AS totalTropeCount
+    RETURN i.name AS investigatorName, caughtCount, totalTropeCount
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'name': record['investigatorName'], 'caught': record['caughtCount'], 'tropeCount': record['totalTropeCount']} for record in records]
     return jsonify(counts)
 
 @app.route("/villainType")
@@ -99,28 +116,6 @@ def get_villain_type_totals():
     counts = [{'type': record['v.type'], 'typeCount': record['count']} for record in records]
     return jsonify(counts)
 
-@app.route("/appearances")
-def get_appearances_totals():
-    query = """
-    MATCH (i:investigator)
-    WHERE ANY(appearances IN keys(i) 
-        WHERE appearances = 'appearances') 
-        AND ANY(phrase IN keys(i) 
-        WHERE phrase ENDS WITH '_count' 
-        AND i[phrase] IS NOT NULL)
-    WITH i, i.appearances AS appearances, 
-        REDUCE(s = 0, phrase IN keys(i) | s + CASE 
-        WHEN phrase ENDS 
-        WITH '_count' 
-        THEN i[phrase] ELSE 0 END) AS totalCatchphrases
-    RETURN i.name AS investigatorName, appearances AS investigatorAppearances, totalCatchphrases AS catchphraseCount
-    """
-
-    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
-    
-    counts = [{'name': record['investigatorName'], 'investigatorAppearances': record['investigatorAppearances'], 'catchphraseCount': record['catchphraseCount']} for record in records]
-    return jsonify(counts)
-
 @app.route("/motives")
 def get_motive_totals():
     query = """
@@ -132,6 +127,19 @@ def get_motive_totals():
     records, _, _ = driver.execute_query(query, database_=database, routing_="r")
     
     counts = [{'motive': record['v.motive'], 'motiveCount': record['count']} for record in records]
+    return jsonify(counts)
+
+@app.route("/realness")
+def get_realness_totals():
+    query = """
+    MATCH (v:villain)
+    WHERE (v.realness IS NOT NULL)
+    RETURN v.realness, COUNT(v) AS count
+    """
+
+    records, _, _ = driver.execute_query(query, database_=database, routing_="r")
+    
+    counts = [{'realness': record['v.realness'], 'realCount': record['count']} for record in records]
     return jsonify(counts)
 
 @app.route("/status")

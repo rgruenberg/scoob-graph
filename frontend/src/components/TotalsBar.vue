@@ -17,35 +17,36 @@ export default {
   data: () => ({
     loaded: false,
     chartData: {
-      labels: ['Investigators', 'Suspects', 'Villains'],
+      labels: [],
       datasets: [{
-        label: 'Count',
+        label: 'Counts', 
         backgroundColor: ['#f87979', '#f8c879', '#79f8f8'], // Example colors
         data: []
       }]
     },
     chartOptions: {
       responsive: true,
-      title: {
-        display: true,
-        text: 'Database Node Counts',
+      plugins: {
+        title: {
+          display: true,
+          text: 'What Node Types Are in the Database?',
+        }
       }
     },
   }),
-  async mounted () {
-    this.loaded = false
-    try {
-      const response = await axios.get('http://localhost:8080/totals')
-      const responseData = response.data
-      this.chartData.datasets[0].data = [
-        responseData.investigators,
-        responseData.suspects,
-        responseData.villains
-      ]
-      this.loaded = true
-    } catch (e) {
-      console.error(e)
-    }
+  async mounted() {
+  this.loaded = false;
+  try {
+    const response = await axios.get('http://localhost:8080/totals');
+    const responseData = response.data;
+
+    this.chartData.datasets[0].data = responseData.map(entry => entry.count);
+    this.chartData.labels = responseData.map(entry => entry.category);
+
+    this.loaded = true;
+  } catch (e) {
+    console.error(e);
   }
+}
 }
 </script>

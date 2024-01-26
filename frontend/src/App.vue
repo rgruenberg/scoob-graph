@@ -9,7 +9,9 @@
           <v-col class=".v-col-4">
             <TotalsBar />
           </v-col>
-          
+          <v-col class=".v-col-6">
+            <AppearancesScatter />
+          </v-col>
         </v-row>
         <v-row>
           <v-col class=".v-col-6">
@@ -21,10 +23,18 @@
         </v-row>
         <v-row>
           <v-col class=".v-col-6">
-            <AppearancesScatter />
+            <StatusPolar />
           </v-col>
           <v-col class=".v-col-6">
             <MotiveDonut />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class=".v-col-6">
+            <TropeRadar />
+          </v-col>
+          <v-col class=".v-col-6">
+            <VillainTypePie />
           </v-col>
         </v-row>
       </v-container>

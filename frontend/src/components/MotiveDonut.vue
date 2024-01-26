@@ -21,7 +21,7 @@ export default {
       labels: [],
       datasets: [{
         label: 'Counts',
-        backgroundColor: ['#f87979', '#f8c879', '#79f8f8'], // Example colors
+        backgroundColor: ['#fff56c', '#b9d61c', '#01a59c', '#f26722', '#faa954', '#d28d30', '#702f90', '#f8dd2f'], // Example colors
         data: []
       }]
     },

@@ -1,67 +1,57 @@
 <template>
   <div class="container">
-    <Bar v-if="loaded" :data="chartData" :options="chartOptions" />
+    <PolarArea v-if="loaded" :data="chartData" :options="chartOptions" />
   </div>
 </template>
 
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { PolarArea } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, CategoryScale, LinearScale, PolarAreaController, RadialLinearScale } from 'chart.js'
 import axios from 'axios'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  PolarAreaController,
+  RadialLinearScale,
+)
 
 export default {
-  name: 'UnmaskedBar',
-  components: { Bar },
+  name: 'MotivePolar',
+  components: { PolarArea },
   data: () => ({
     loaded: false,
+    type: 'polarArea',
     chartData: {
       labels: [],
       datasets: [{
         label: 'Counts',
-        backgroundColor: [], // Example colors
+        backgroundColor: ['#d28d30', '#b9d61c', '#fff56c', '#f26722', '#01a59c', '#faa954', '#702f90', '#f8dd2f'],
+        borderColor: ['#d28d30', '#b9d61c', '#fff56c', '#f26722', '#01a59c', '#faa954', '#702f90', '#f8dd2f'],
+        borderWidth: 1,
         data: []
       }]
     },
     chartOptions: {
-     responsive: true,
-     title: {
-        display: true,
-        text: 'Who Unmasked the Most Villains?',
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Suspect Status Polar Chart - Alive or Incarcerated?',
+        }
       }
     }
   }),
-  async mounted () {
+  async mounted() {
     this.loaded = false
     try {
-      const response = await axios.get('http://localhost:8080/unmasked')
+      const response = await axios.get('http://localhost:8080/status')
       const responseData = response.data
-      this.chartData.datasets[0].data = responseData.map(entry => entry.unmaskerCount);
-      this.chartData.labels = responseData.map(entry => entry.name);
-
-      let names = responseData.map(entry => entry.name);
-      let barColor = [];
-      names.forEach(name => {
-        switch (name) {
-        case 'Velma Dinkley':
-          barColor.push('#F98B08');
-          break;
-        case 'Fred Jones':
-          barColor.push('#0081DF');
-          break;
-        case 'Daphne Blake':
-          barColor.push('#6F1BA1');
-          break;
-        case 'Norville Rogers':
-          barColor.push('#D1FF49');
-          break;
-        default:
-          barColor.push('#B57530');
-          break;
-        }
-      });
-      this.chartData.datasets[0].backgroundColor = barColor;
+      this.chartData.datasets[0].data = responseData.map(entry => entry.statusCount);
+      this.chartData.labels = responseData.map(entry => entry.status);
 
       this.loaded = true
     } catch (e) {
